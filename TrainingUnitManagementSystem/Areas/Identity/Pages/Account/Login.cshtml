@@ -1,0 +1,28 @@
+﻿@page
+@model TrainingUnitManagementSystem.Areas.Identity.Pages.Account.LoginModel
+
+<div class="login-container">
+    <div class="logo">
+        <img src="https://umat.edu.gh/themes/demo/assets/images/umat_logo.png" alt="UMaT Logo">
+        <h2 class="mt-2">UNIVERSITY OF MINES AND TECHNOLOGY (UMaT)</h2>
+    </div>
+    <form class="login-form">
+        <div class="form-group">
+            <label for="studentID">Student ID</label>
+            <input type="text" class="form-control" id="studentID" placeholder="9007726673647">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+        <div class="form-group text-right">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </form>
+    <div class="links">
+        <a href="#">Terms</a>
+        <a href="#">Plans</a>
+        <a href="#">Contact Us</a>
+    </div>
+</div>

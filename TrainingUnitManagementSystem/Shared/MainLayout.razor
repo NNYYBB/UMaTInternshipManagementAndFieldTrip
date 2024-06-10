@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager Navigation
+
+<PageTitle>My Blazor App</PageTitle>
+
+<CascadingAuthenticationState>
+    <AuthorizeView>
+        <Authorized>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/admin">Admin Home</a>
+                <a href="/student">Student Home</a>
+            </nav>
+            <button @onclick="Logout">Logout</button>
+        </Authorized>
+        <NotAuthorized>
+            <a href="/login">Login</a>
+        </NotAuthorized>
+    </AuthorizeView>
+
+    <div class="page">
+        @Body
+    </div>
+</CascadingAuthenticationState>
+
+@code {
+    private async Task Logout()
+    {
+        ((CustomAuthenticationStateProvider)AuthenticationStateProvider).MarkUserAsLoggedOut();
+        Navigation.NavigateTo("/");
+    }
+}
